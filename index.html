@@ -1,40 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <head>
+  <meta charset="utf-8" />
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
 
-		<title>reveal.js</title>
+  <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+  <link rel="stylesheet" href="dist/reset.css" />
+  <link rel="stylesheet" href="dist/reveal.css" />
+  <link rel="stylesheet" href="dist/theme/black.css" />
+  <link rel="stylesheet" href="../../svg/reveal.js/mystyle.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <h2>SVG</h2>
+     <p>modes, coordinates, basic shapes, accessibility, animations</p>
+    </section>
+    <section>
+     <p>
+      <strong>Scalable Vector Graphics (SVG)</strong> is an XML-based markup
+      language for describing two-dimensional graphics
+     </p>
+     <pre>
+		<code>
+&lt;svg
+  xmlns="http://www.w3.org/2000/svg" 
+  xmlns="http://www.w3.org/2000/svg"
+  fill-rule="evenodd"
+  clip-rule="evenodd"
+  viewBox="0 0 24 24"&gt; 
+  &lt;path
+    d="M16 12a3.001 3.001 0 016 0 3.001 3.001 0 01-6 0zm1 0a2
+	2 0 114.001.001A2 2 0 0117 12zm-8 0a3.001 3.001 0 016 0 
+	3.001 3.001 0 01-6 0zm1 0a2 2 0 114.001.001A2 2 0 0110 
+	2 0 114.001.001A2 2 0 013 12z"
+  /&gt;
+&lt;/svg&gt;
+		</code>
+	  </pre>
+    </section>
+    <section>
+     <h2>Stroke</h2>
+     <h2>Fill</h2>
+     <pre>
+<code>
+&lt;svg width="230" height="140"&gt;
+  &lt;rect x="5" y="5" width="220" height="130"
+  fill="skyblue" stroke="steelblue" stroke-width="5"
+  /&gt;
+&lt;/svg&gt;
+</code>
+	 </pre>
+     <div>
+      <svg width="230" height="140">
+       <rect
+        x="5"
+        y="5"
+        width="220"
+        height="130"
+        fill="skyblue"
+        stroke="steelblue"
+        stroke-width="5"
+       />
+      </svg>
+     </div>
+    </section>
+    <section>
+     <h2>Modes</h2>
+     <img src="mode.png" width="450" height="550">
+    </section>
+    <section>
+     <h2>Coordinates</h2>
+     <img src="oordinates.jpg" width="550" height="550"/>
+    </section>
+    <section>
+	<h2>Syntax viewBox</h2>
+     <pre>
+	<code>
+             viewBox = &lt;min-x&gt;&lt;min-y&gt;&lt;width&gt;&lt;height&gt;
+	</code>
+</pre>
+<p>The &lt;min-x&gt; and &lt;min-y&gt; values determine the upper left corner of the viewbox and the &lt;width&gt; and &lt;height&gt; determine the width and height of that viewBox</p>
+    </section>
+    <section>
+		<h2>Basic shapes</h2>
+		<p>Rectangle
+		<pre>
+			<code>
+&lt;rect x="60" y="10" rx="10" ry="10" width="30" height="30"/&gt;
+			</code>
+		</pre>
+		</p>
+		<p>Circle
+			<pre>
+				<code>
+&lt;circle cx="25" cy="75" r="20"/&gt;
+				</code>
+			</pre>
+			</p>
+			<p>Ellipse
+				<pre>
+					<code>
+&lt;ellipse cx="75" cy="75" rx="20" ry="5"/&gt;
+					</code>
+				</pre>
+			</p>
+	</section>
+	<section>
+			<p>Line
+				<pre>
+				<code>
+&lt;x1="10" x2="50" y1="110" y2="150" stroke="black" stroke-width="5"/&gt;
+				</code>
+				</pre>
+			</p>
+			<p>Polyline
+				<pre>
+				<code>
+&lt;polyline points="60, 110 65, 120 70, 115 75, 130 80, 125 85, 140
+ 90, 135 95, 150 100, 145"/&gt;
+				</code>
+				</pre>
+			</p>
+			<p>Polygon
+				<pre>
+				<code>
+&lt;polygon points="50, 160 55, 180 70, 180 60, 190 65, 205 50, 195 
+35, 205 40, 190 30, 180 45, 180"/&gt;
+				</code>
+				</pre>
+			</p>
+			<p>Paths
+				<pre>
+				<code>
+&lt;path d="M 10 10 H 90 V 90 H 10 L 10 10"/&gt;
+				</code>
+				</pre>
+			</p>
+	</section>
+	<section>
+		<h2>Accessibility</h2>
+		<ul>
+			<li class="fragment">SVG images are scalable</li>
+			<li class="fragment">Structured images</li>
+			<li class="fragment">Alternative equivalents</li>
+			<li class="fragment">XML - Plain text</li>
+			<li class="fragment">XML - Stylesheets</li>
+			<li class="fragment">Extended Styling</li>
+			<li class="fragment">XML - DOM interface</li>
+			<li class="fragment">XML - SVG with other XML languages</li>
+		</ul>
+	</section>
+	<section>
+	  <h2>CSS-animation</h2>
+	    <ul>
+		  <li>@keyframes</li>
+		</ul>
+	</section>
+	<section>
+		<h2>SMIL-animation</h2>
+	    <ul>
+		  <li>&lt;animate&gt;</li>
+		  <li>&lt;set&gt;</li>
+		  <li>&lt;animateTransform&gt;</li>
+		  <li>&lt;animateMotion&gt;</li>
+	    </ul>
+	</section>
+	<section>
+		<h2>Pluses using SVG:</h2>
+		<ul>
+			<li>SVG is easy to modify </li>
+			<li>For screens with high pixel density, one image is sufficient</li>
+			<li>SVG loads quickly</li>
+			<li>SVG is easy to make responsive</li>
+			<li>SVG can be interactive</li>
+		</ul>
+	</section>
+   </div>
+  </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+   // More info about initialization & config:
+   // - https://revealjs.com/initialization/
+   // - https://revealjs.com/config/
+   Reveal.initialize({
+    hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+   });
+  </script>
+ </body>
 </html>
