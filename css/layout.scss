@@ -67,3 +67,88 @@
 .reveal .justify-start { justify-content: flex-start; }
 .reveal .justify-center { justify-content: center; }
 .reveal .justify-end { justify-content: flex-end; }
+
+.wrapper-slide-1{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+.cards_developers{
+	display: flex;
+	justify-content: space-around;
+}
+  .card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	text-align: justify;
+	margin: 10px;
+	gap: 10px;
+	border-radius: 50px;
+	padding: 10px;
+  
+	.card__img {
+	  width: 200px;
+	  min-height: 200px;
+	  border-radius: 100px;
+	}
+  
+	.card__name {
+	  font-size: 30px;
+	  display: flex;
+	  gap: 20px;
+	  align-items: center;
+	}
+  
+	.card__role {
+	  font-size: 25px;
+	  font-weight: 600;
+	  text-align: center;
+	  min-height: 60px;
+	}
+}
+.tasks{
+	font-size: 22px;
+}
+.task_info{
+	font-size: 19px;
+	font-style: italic;
+}
+table{
+	border: 1px solid;
+}
+tbody tr:nth-child(odd) {
+    background-color: #3d3e3e;
+	opacity: 0.8;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #202021;
+	opacity: 0.8;
+  }
+
+  tbody td:nth-child(odd) {
+    background-color: #3d3e3e;
+	opacity: 0.8;
+  }
+  tbody td:nth-child(even) {
+    background-color: #202021;
+	opacity: 0.8;
+  }
+  table tbody tr td{
+	font-size: 22px;
+	padding: 0;
+	align-content: center;
+	vertical-align: middle;
+  }
+  thead th:nth-child(odd) {
+    background-color: #3d3e3e;
+	opacity: 0.8;
+  }
+  thead th:nth-child(even) {
+    background-color: #202021;
+	opacity: 0.8;
+  }
+  ul{
+	margin: 0 auto;
+  }
